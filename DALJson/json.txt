@@ -1,0 +1,25 @@
+[
+    {
+      "ProductId": 1,
+      "ProductName": "Azucar Json",
+      "UnitPrice": 12,
+      "UnitInStock": 100,
+      "CategoryId": 1
+    },
+
+    {
+      "ProductId": 2,
+      "ProductName": "Hot dog Json",
+      "UnitPrice": 55,
+      "UnitInStock": 200,
+      "CategoryId": 2
+    },
+    {
+      "ProductId": 3,
+      "ProductName": "Laura por favor Json",
+      "UnitPrice": 1500,
+      "UnitInStock": 125,
+      "CategoryId": 3
+    }
+
+]
