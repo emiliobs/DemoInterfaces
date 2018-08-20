@@ -7,9 +7,9 @@ namespace DALMSQL
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Product
+    public class Product:ProductInterface.IProduct
     {
-        public Entities.Product GetProductById(int id)
+        public Entities.Product GetProductById(int Id)
         {
             Entities.Product product = null;
 
@@ -18,7 +18,7 @@ namespace DALMSQL
             connection.Open();
             var cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = $"Select * from Products where ProductId = {id}";
+            cmd.CommandText = $"Select * from Products where ProductId = {Id}";
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {

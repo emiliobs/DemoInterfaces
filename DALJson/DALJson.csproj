@@ -52,6 +52,10 @@
       <Project>{9e72a54c-79cd-4b8b-a46a-96803e2b80d4}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProductInterface\ProductInterface.csproj">
+      <Project>{51ef8d2d-98eb-478b-9b1b-13b8ebea9d69}</Project>
+      <Name>ProductInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="json.txt">

@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class Product
+    public class Product : ProductInterface.IProduct
     {
 
         public Entities.Product GetProductById(int id)

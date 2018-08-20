@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4662F85-D0F6-461A-87EF-CEE50138BBFA}</ProjectGuid>
+    <ProjectGuid>{51EF8D2D-98EB-478B-9B1B-13B8EBEA9D69}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>ProductInterface</RootNamespace>
+    <AssemblyName>ProductInterface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,38 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="errorEventArgs.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="IProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DALExtra\DALExtra.csproj">
-      <Project>{87ac0fa2-cf92-4995-a60d-bf078c48f2c6}</Project>
-      <Name>DALExtra</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
-      <Project>{7060e9ec-7198-4090-9921-f0c135954f49}</Project>
-      <Name>DALFactory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DALJson\DALJson.csproj">
-      <Project>{7563ff13-d542-49cb-8323-fc5bcfd53467}</Project>
-      <Name>DALJson</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DALMSQL\DALMSQL.csproj">
-      <Project>{9a8e15b7-2ff1-4778-9f68-7ce6323ab497}</Project>
-      <Name>DALMSQL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{d4a43d21-460a-4372-81ae-d38fa4e78385}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{9e72a54c-79cd-4b8b-a46a-96803e2b80d4}</Project>
       <Name>Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProductInterface\ProductInterface.csproj">
-      <Project>{51ef8d2d-98eb-478b-9b1b-13b8ebea9d69}</Project>
-      <Name>ProductInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DALJson
 {
-    public class Product
+    public class Product: ProductInterface.IProduct
     {
       public Entities.Product GetProductById(int Id)
         {
