@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,10 +56,6 @@
     <ProjectReference Include="..\DALJson\DALJson.csproj">
       <Project>{7563ff13-d542-49cb-8323-fc5bcfd53467}</Project>
       <Name>DALJson</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DALMSQL\DALMSQL.csproj">
-      <Project>{9a8e15b7-2ff1-4778-9f68-7ce6323ab497}</Project>
-      <Name>DALMSQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{d4a43d21-460a-4372-81ae-d38fa4e78385}</Project>
