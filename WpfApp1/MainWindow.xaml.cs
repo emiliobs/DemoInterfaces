@@ -30,44 +30,55 @@ namespace WpfApp1
 
             btnSearch.Click += BtnSearch_Click;
 
+            //var c = ViewModels.Class1.CreateInstance();
+             
+            
+
         }
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            var B = new BLL.Product();
-
-            //Aqui invo el el evento que contiene el delagado del la clase en BLL
-            B.errorEvent += (s, ev) => txtMessage.Text = ev.Message;
-
-            var product = new Entities.Product();
-
-            if (!string.IsNullOrEmpty(txtSearchProduct.Text))
-            {
-                  product = B.GetProductById(int.Parse(txtSearchProduct.Text));
-            }
-            else      
-            {
-                MessageBox.Show("Ingrese un Product Id.");
-                return;
-            }
-
-          
-
-            if (product != null)
-            {
-
-
-                txtProductId.Text = product.ProductId.ToString();
-                txtName.Text = product.ProductName;
-                txtUnitPrice.Text = product.UnitPrice.ToString();
-                txtUnitStock.Text = product.UnitInStock.ToString();
-                txtCAtegoryId.Text = product.CategoryId.ToString();
-
-            }
-           
+           var vm =  this.DataContext as ViewModels.ProductViewModel;
+            vm.GetProductById(Convert.ToInt32(txtSearchProduct.Text));
+            DataContext = vm;
         }
 
-        
+        //private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var B = new BLL.Product();
+
+        //    //Aqui invo el el evento que contiene el delagado del la clase en BLL
+        //    B.errorEvent += (s, ev) => txtMessage.Text = ev.Message;
+
+        //    var product = new Entities.Product();
+
+        //    if (!string.IsNullOrEmpty(txtSearchProduct.Text))
+        //    {
+        //          product = B.GetProductById(int.Parse(txtSearchProduct.Text));
+        //    }
+        //    else      
+        //    {
+        //        MessageBox.Show("Ingrese un Product Id.");
+        //        return;
+        //    }
+
+
+
+        //    if (product != null)
+        //    {
+
+
+        //        txtProductId.Text = product.ProductId.ToString();
+        //        txtName.Text = product.ProductName;
+        //        txtUnitPrice.Text = product.UnitPrice.ToString();
+        //        txtUnitStock.Text = product.UnitInStock.ToString();
+        //        txtCAtegoryId.Text = product.CategoryId.ToString();
+
+        //    }
+
+        //}
+
+
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {

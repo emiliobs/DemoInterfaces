@@ -4,10 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:vm="clr-namespace:ViewModels;assembly=ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-   
-    <Grid Margin="20">           
+        Title="Products" Height="450" Width="800">
+    
+    <Window.DataContext>
+        <vm:ProductViewModel></vm:ProductViewModel>
+    </Window.DataContext>
+
+
+    <Grid Margin="20">          
        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -24,35 +30,36 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5,0,5,20">
                 <TextBlock Text="Product Id:" Width="100" Margin="5"></TextBlock>
-                <TextBox x:Name="txtSearchProduct" Width="50" Margin="5"></TextBox>
+                <TextBox x:Name="txtSearchProduct"  Width="50" Margin="5"></TextBox>
                 <Button x:Name="btnSearch" Content="Search." Width="80" Margin="5"></Button>
                 <Button x:Name="btnClear" Content="Clear.." Width="80" Margin="5" Click="btnClear_Click"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Product Id:" Margin="5"></TextBlock>
-                <TextBox x:Name="txtProductId" Margin="50,0,0,0" Width="100"></TextBox>
+                <TextBox x:Name="txtProductId" Text="{Binding ProductId, Mode=TwoWay}"  Margin="50,0,0,0" Width="100"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Product Name:" Margin="5"></TextBlock>
-                <TextBox x:Name="txtName" Margin="29,0,0,0" Width="361"></TextBox>
+                <TextBox x:Name="txtName" Text="{Binding ProductName, Mode=TwoWay}" Margin="29,0,0,0" Width="361"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Unit Price:" Margin="5"></TextBlock>
-                <TextBox x:Name="txtUnitPrice" Margin="55,0,0,0" Width="194"></TextBox>
+                <TextBox x:Name="txtUnitPrice" Text="{Binding UnitPrice, Mode=TwoWay}" Margin="55,0,0,0" Width="194"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Unit On Stock:" Margin="5"></TextBlock>
-                <TextBox x:Name="txtUnitStock" Margin="33,0,0,0" Width="129"></TextBox>
+                <TextBox x:Name="txtUnitStock" Text="{Binding UnitInStock, Mode=TwoWay}" Margin="33,0,0,0" Width="129"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Category Id:" Margin="5"></TextBlock>
-                <TextBox x:Name="txtCAtegoryId" Margin="45,0,0,0" Width="103"></TextBox>
+                <TextBox x:Name="txtCAtegoryId" Text="{Binding CategoryId}" Margin="45,0,0,0" Width="103"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Message:" Margin="5,30,0,0"></TextBlock>
-                <TextBox x:Name="txtMessage" Margin="60,30,0,0" Width="586"></TextBox>
+                <TextBox x:Name="txtMessage"  Text="{Binding Message }"  Margin="60,30,0,0" Width="586"></TextBox>
             </StackPanel>
         </StackPanel>
 
     </Grid>
+    
 </Window>

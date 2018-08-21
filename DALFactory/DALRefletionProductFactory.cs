@@ -6,9 +6,10 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    public class DALPRodductFactory
+    public class DALRefletionProductFactory:BaseCreator
     {
-        public ProductInterface.IProduct GetDALProduct()
+        //creator
+        public override ProductInterface.IProduct GetDALProduct()
         {
             ProductInterface.IProduct product = null;
               //ruta del assemble desde el appConfig
@@ -35,10 +36,10 @@
            
 
 
-        public string GetIdentity(ProductInterface.IProduct product)
-        {
-            return product.GetType().FullName;
-        }
+        //public string GetIdentity(ProductInterface.IProduct product)
+        //{
+        //    return product.GetType().FullName;
+        //}
 
 
     }

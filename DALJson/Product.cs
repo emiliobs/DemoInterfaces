@@ -14,8 +14,8 @@ namespace DALJson
       public Entities.Product GetProductById(int Id)
         {
             Entities.Product product;
-            using (var reader = new StreamReader("json.txt"))
-            //using (var reader = new StreamReader("Products.json"))
+            //using (var reader = new StreamReader("json.txt"))
+            using (var reader = new StreamReader("Products.json"))
             {
                 var json = reader.ReadToEnd();
 

@@ -3,16 +3,22 @@
     public class Product
     {
 
-        private DALFactory.DALPRodductFactory Factory;
+        //private DALFactory.DALRefletionProductFactory Factory;
+        //private DALFactory.DALReferenceProductFactory Factory2;
 
-        public Product():this(new DALFactory.DALPRodductFactory())
+        private DALFactory.BaseCreator Factory;
+        //private DALFactory.BaseCreator Factory2;
+
+        public Product():this(new DALFactory.DALReferenceProductFactory())
         {
 
         }
 
-        public Product(DALFactory.DALPRodductFactory factory)
+       
+        public Product(DALFactory.BaseCreator factory)
         {
             Factory = factory;
+          
         }
 
         public event ErrorEventHandler errorEvent;
@@ -25,7 +31,7 @@
             if (Id>0)
             {
                 var d = Factory.GetDALProduct();
-
+                //var d = Factory2.GetDALProduct();
                //desde e DALFActory que referencia a la Interface de todas la DAL.
                 //var factory = new DALFactory.DALPRodductFactory();
                 //var d = factory.GetDALProduct();
@@ -46,9 +52,13 @@
                     errorEvent(this, new ErrorEventArgs("Producto no encontrado"));
 
                 }
-
-
+                else
+                {
                 errorEvent?.Invoke(this, new ErrorEventArgs(Factory.GetIdentity(d)));
+
+                }
+
+
             }
             else
             {
